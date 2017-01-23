@@ -13,4 +13,4 @@ docker build -t znc-alpine:local .
 docker run -d --name znc-alpine -p 20405:20405 -v $(pwd)/znc:/znc-data znc-alpine:local
 ```
 
-If you have an existing ZNC setup, add the relevent files to config/.
+If you have an existing ZNC setup, add the relevant files to config/.
