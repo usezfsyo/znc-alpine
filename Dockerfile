@@ -9,7 +9,8 @@ RUN apk add --update g++ make openssl-dev icu-dev su-exec && \
 	tar -zxf znc-*.tar.gz && rm znc-*.tar.gz && cd "znc-${ZNC_VER}" && \
 	./configure && make && make install && \
 	cd ../ && rm -r "znc-${ZNC_VER}" && \
-	adduser -D znc
+	adduser -D znc && \
+	rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
 
 ADD docker-entrypoint.sh /entrypoint.sh
 ADD znc.conf.default /znc.conf.default
